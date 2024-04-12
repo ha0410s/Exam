@@ -11,20 +11,12 @@ public class TeacherDAO { // DAOクラスを継承(DAOクラスのメソッド�
 		throws Exception {
 		Teacher teacher=null;
 		
-		 /* 変数のteacher中身はこんな感じ 
-		  *   -----------------------  
-		  *   | i d | login |password | 
-		  *    -----------------------  
-		  *   |     |       |         | 
-		  *    ----------------------- 
-		  */
-		
 		Connection con=getConnection(); // DB接続
 
 		// 引数で与えられたID、PWDをもつユーザを検索
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"select * from teacher where name=? and password=?");
+			"select * from teacher where id=? and password=?");
 		st.setString(1, id);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
@@ -35,23 +27,10 @@ public class TeacherDAO { // DAOクラスを継承(DAOクラスのメソッド�
 			teacher.setId(rs.getString("id"));
 			teacher.setName(rs.getString("name"));
 			teacher.setPassword(rs.getString("password"));
-		}
-		
-		/* 変数teacherの中身はこんな感じ 
-		  *   -----------------------  
-		  *   | i d | login |password | 
-		  *    -----------------------  
-		  *   |  1  |****** |******** | 
-		  *    ----------------------- 
-		  */
+			teacher.setSchool_cd(rs.getString("school_cd"));
 
 		st.close();
 		con.close();
 		return teacher;
-	}
-
-	private Connection getConnection() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
 	}
 }

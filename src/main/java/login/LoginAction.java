@@ -14,14 +14,14 @@ public class LoginAction extends Action {
 
 		HttpSession session=request.getSession();
 
-		String login=request.getParameter("login");
+		String id=request.getParameter("id");
 		String password=request.getParameter("password");
 
 		TeacherDAO dao=new TeacherDAO();
-		Teacher teacher=dao.search(login, password);
+		Teacher teacher=dao.search(id, password);
 		
 		if (teacher!=null) {
-			session.setAttribute("customer", teacher);
+			session.setAttribute("teacher", teacher);
 			return "login_out.jsp";
 		}
 		
