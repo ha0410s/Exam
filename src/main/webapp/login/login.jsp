@@ -7,7 +7,7 @@
         ログイン画面
     </title>
     <p>
-        ログインID<input type="text" name="login">
+        ログインID<input type="text" name="id">
     </p>
     <p>
         パスワード<input type="password" name="pssword">
