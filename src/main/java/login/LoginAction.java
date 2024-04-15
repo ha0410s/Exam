@@ -22,9 +22,9 @@ public class LoginAction extends Action {
 		
 		if (teacher!=null) {
 			session.setAttribute("teacher", teacher);
-			return "login_out.jsp";
+			return "../index/index.jsp";
 		}
 		
-		return "login_error.jsp";
+		return "login.jsp";
 	}
 }  

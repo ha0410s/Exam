@@ -10,7 +10,7 @@
         ログインID<input type="text" name="id">
     </p>
     <p>
-        パスワード<input type="password" name="pssword">
+        パスワード<input type="password" name="password">
     </p>
     <p>
         <input type="submit" value="ログイン">
