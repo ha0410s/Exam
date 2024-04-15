@@ -2,6 +2,6 @@
 <%@include file="../header.html" %>
 
 <!-- ユーザ名を表示 -->
-こんにちは、${customer.login}先生。
+こんにちは、${teacher.login}先生。
 
 <%@include file="../footer.html" %>

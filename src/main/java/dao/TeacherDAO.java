@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 import bean.Teacher;
 
-public class TeacherDAO { // DAOクラスを継承(DAOクラスのメソッドを使えるようにする)
+public class TeacherDAO extends DAO{ // DAOクラスを継承(DAOクラスのメソッドを使えるようにする)
 	public Teacher search(String id, String password) // searchメソッドを定義(ユーザの検索機能)
 		throws Exception {
 		Teacher teacher=null;
@@ -33,5 +33,6 @@ public class TeacherDAO { // DAOクラスを継承(DAOクラスのメソッド�
 		st.close();
 		con.close();
 		return teacher;
+		}
 	}
 }
