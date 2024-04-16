@@ -18,7 +18,8 @@ import bean.Student;
 
 			// select文を実行
 			PreparedStatement st=con.prepareStatement(
-				"select * from student");
+				"select * from student where name like ?");
+			st.setString(1, "%"+keyword+"%");
 			ResultSet rs=st.executeQuery();
 
 			// データを順に取得
@@ -39,19 +40,22 @@ import bean.Student;
 			return list; // listの値を返却する
 		}
 
-//		public int insert(Student Studet) throws Exception {
-//			Connection con=getConnection();
-//
-//			PreparedStatement st=con.prepareStatement(
-//				"insert into product values(null, ?, ?)");
-//			st.setString(1, student.getName());
-//			st.setInt(2, student.get());
-//			int line=st.executeUpdate();
-//
-//			st.close();
-//			con.close();
-//			return line;
-//		}
-//	}
+		public int insert(Student student) throws Exception {
+			Connection con=getConnection();
 
-}
+			PreparedStatement st=con.prepareStatement(
+				"insert into student values(?,?,?,?,?,?)");
+			st.setInt(1, student.getno());
+			st.setString(2, student.getName());
+			st.setInt(3, student.getEnt_year());
+			st.setInt(4, student.getClass_num());
+			st.setBoolean(5, student.getIs_attend());
+			st.setString(6, student.getSchool_cd());
+			int line=st.executeUpdate();
+
+			st.close();
+			con.close();
+			return line;
+		}
+	}
+
