@@ -10,32 +10,35 @@ import bean.TestListScore; // TestListSubjectクラスのimportを追加
 
 public class TestListScoreDAO extends DAO {
 	
-	public List<TestListScore> search(String keyword) throws Exception { // searchメソッドを定義
-		List<TestListScore> scoreList=new ArrayList<>(); // Product型の配列を作成
+	public List<TestListScore> search(String class_num, String subject_name, String ent_year) throws Exception {
+	    List<TestListScore> scoreList = new ArrayList<>();
+	    Connection con = getConnection();
+	    PreparedStatement st = con.prepareStatement(
+	        "SELECT * FROM test INNER JOIN student ON test.student_no = student.no INNER JOIN subject ON subject.cd = test.subject_cd WHERE (? IS NULL OR student.class_num = ?) AND (? IS NULL OR subject.name LIKE ?) AND (? IS NULL OR student.ent_year = ?)");
+	    st.setString(1, class_num);  
+	    st.setString(2, class_num);  
+	    st.setString(3, "%" + subject_name + "%");  
+	    st.setString(4, subject_name);  
+	    st.setString(5, ent_year);  
+	    st.setString(6, ent_year);
+	    ResultSet rs = st.executeQuery();
 
-		Connection con=getConnection(); // DBに接続(DAOのgetConnectionメソッドを実行)
+	    while (rs.next()) {
+	        TestListScore score = new TestListScore();
+	        score.setEnt_year(rs.getInt("ent_year"));
+	        score.setStudent_no(rs.getString("student_no"));
+	        score.setName(rs.getString("name"));
+	        score.setClass_num(rs.getString("class_num"));
+	        score.setPoint(rs.getInt("point"));
+	        score.setSubject_name(rs.getString("subject.name"));  
+	        score.setTest_no(rs.getInt("test.no"));
+	        scoreList.add(score);
+	    }
 
-		PreparedStatement st=con.prepareStatement(
-				"SELECT * From test join student on test.class_num = student.class_num Where student.name like ?"); // 成績の一覧を取得するSQL文
-		st.setString(1, "%"+keyword+"%");
-		ResultSet rs=st.executeQuery();
-		
-		
-		 while (rs.next()) {
-	            TestListScore score = new TestListScore();
-	            score.setEnt_year(rs.getInt("ent_year"));
-	            score.setStudent_no(rs.getString("student_no"));
-	            score.setStudent_name(rs.getString("name"));
-	            score.setClass_num(rs.getString("class_num"));
-	            score.setSchool_cd(rs.getString("school_cd"));
-	            score.setPoint(rs.getInt("point"));
-	            scoreList.add(score);
-	        }
+	    st.close();
+	    con.close();
 
-        st.close();
-        con.close();
-
-        return scoreList;
+	    return scoreList;
 	}
 
     public List<TestListScore> getAllScore() throws Exception {
@@ -44,7 +47,7 @@ public class TestListScoreDAO extends DAO {
         Connection con = getConnection();
 
         PreparedStatement st = con.prepareStatement(
-                "SELECT * From test join student on test.class_num = student.class_num"); // 成績の一覧を取得するSQL文
+                "SELECT * From test inner join student on test.student_no = student.no inner join subject on subject.cd = test.subject_cd"); // 成績の一覧を取得するSQL文
 
         ResultSet rs = st.executeQuery();
 
@@ -52,10 +55,11 @@ public class TestListScoreDAO extends DAO {
             TestListScore score = new TestListScore();
             score.setEnt_year(rs.getInt("ent_year"));
             score.setStudent_no(rs.getString("student_no"));
-            score.setStudent_name(rs.getString("name"));
+            score.setName(rs.getString("name"));
             score.setClass_num(rs.getString("class_num"));
-            score.setSchool_cd(rs.getString("school_cd"));
             score.setPoint(rs.getInt("point"));
+            score.setSubject_name(rs.getString("subject.name"));
+            score.setTest_no(rs.getInt("test.no"));
             scoreList.add(score);
         }
 
@@ -63,8 +67,9 @@ public class TestListScoreDAO extends DAO {
         con.close();
 
         return scoreList;
+    
     }
-        
+
 		
 			
     }

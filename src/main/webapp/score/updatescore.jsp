@@ -2,9 +2,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../header.html" %>
 <%@include file="../index/menu.jsp" %>
-<h1>成績参照</h1>
-<p>検索したい成績を入力してください</p>
-<form action="Score.action" method="post">
+<h1>成績登録</h1>
+<p>変更したい成績を検索してください</p>
+<form action="UpdateScore.action" method="post">
     <select name="class_num">
         <!-- クラスのオプションを追加 -->
         <option value="">クラスを選択してください</option>
@@ -27,8 +27,7 @@
 <p>${errorMessage}</p>
 <hr>
 
-<a href="scorelist.jsp">一覧表示</a> 
-
+<form action="UpdateScores.action" method="post">
 <table style="border-collapse:separate;border-spacing:10px">
   <tr>
     <th>教科</th>
@@ -47,8 +46,14 @@
       <td>${score.student_no}</td>
       <td>${score.name}</td>
       <td>${score.test_no }回目</td>
-      <td>${score.point}点</td>
-      
+      <td>
+      <input type="text"name="point"value="${score.point}">
+      </td>
+      <td>
+      <a href="UpdateScore.action?student_no=${score.student_no}">更新</a>
+      </td>
     </tr>
   </c:forEach>
 </table>
+
+</form>
