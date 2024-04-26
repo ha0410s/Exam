@@ -50,7 +50,7 @@
       <input type="text"name="point"value="${score.point}">
       </td>
       <td>
-      <a href="UpdateScore.action?student_no=${score.student_no}">更新</a>
+      <a href="update2.jsp">更新</a>
       </td>
     </tr>
   </c:forEach>

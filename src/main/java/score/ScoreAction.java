@@ -24,12 +24,18 @@ public class ScoreAction extends Action {
             TestListScoreDAO dao = new TestListScoreDAO();
             List<TestListScore> list = dao.search(class_num, subject_name, ent_year);
             
-            // JSPに渡すために検索結果をリクエストにセット
-            request.setAttribute("list", list);
-            
-            // 結果を表示するJSPへフォワード
-            return "../score/search.jsp";
+            // Check if the list is empty
+            if (list.isEmpty()) {
+                // If the list is empty, set the error message
+                request.setAttribute("errorMessage2", "学生情報が存在しませんでした");
+                // Forward to the appropriate JSP page
+                return "../score/search.jsp";
+            } else {
+                // JSPに渡すために検索結果をリクエストにセット
+                request.setAttribute("list", list);
+                // 結果を表示するJSPへフォワード
+                return "../score/search.jsp";
+            }
         }
-        
     }
 }
