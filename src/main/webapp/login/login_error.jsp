@@ -3,6 +3,7 @@
 <%@include file="../beforeloginheader.html" %>
 
 
+
     <div style="text-align: center;">
     <label>ログインに失敗しました。IDまたはパスワードが正しくありません。
     </label>

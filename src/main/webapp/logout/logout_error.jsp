@@ -4,3 +4,4 @@
 すでにログアウトしています。
 
 <%@include file="../footer.html" %>
+

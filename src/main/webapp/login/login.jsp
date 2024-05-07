@@ -17,6 +17,8 @@
   	border-radius: 1em;
   	border: 2px solid #aaa;">
     <br>
+    
+    
     <input type="password" name="password" placeholder="パスワード" required
     style="width: 30%;
   	box-sizing: border-box;

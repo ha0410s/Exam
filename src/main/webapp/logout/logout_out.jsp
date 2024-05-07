@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../beforeloginheader.html" %>
 
+
 <h2 class="studentmanage"
 	style="
 	width:79%;

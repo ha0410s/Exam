@@ -2,6 +2,7 @@
 <%@include file="../header.html" %>
 <%@include file="../sidebar.html" %>
 
+
 <h2 class="studentmanage"
 	style="
 	width:79%;

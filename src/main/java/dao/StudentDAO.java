@@ -8,6 +8,7 @@ import java.util.List;
 import bean.Student;
 
 
+
 public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスのメソッドが使えるようになる)
 	public List<Student> searchall() 
 			throws Exception { // searchメソッドを定義

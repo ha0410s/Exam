@@ -5,3 +5,4 @@
 エラーが起きています
 
 <%@include file="../footer.html" %>
+
