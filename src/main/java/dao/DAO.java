@@ -10,8 +10,8 @@ public class DAO {
 
 	// データベースの接続に必要な処理をgetConnectionというメソッドにまとめておく
 	public Connection getConnection() throws Exception {
-		if (ds==null) {
-			InitialContext ic=new InitialContext();
+		if(ds==null) {
+			InitialContext ic = new InitialContext();
 			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/exam");
 		}
 		return ds.getConnection();

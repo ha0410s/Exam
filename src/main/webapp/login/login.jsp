@@ -1,20 +1,43 @@
 <%-- ログイン画面JSP --%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../beforeloginheader.html" %>
 
-<form action="Login.action" method="post">
+
+    <div style="text-align: center;">
+    <form action="Login.action" method="post">
     <title>
         ログイン画面
     </title>
-    <p>
-        ログインID<input type="text" name="id">
-    </p>
-    <p>
-        パスワード<input type="password" name="password">
-    </p>
-    <p>
-        <input type="submit" value="ログイン">
-    </p>
-</form>
+    <input type="text" name="id" placeholder="ID" required
+    style="
+    width: 30%;
+  	box-sizing: border-box;
+  	margin: 1em 0;
+ 	padding: .8em;
+  	border-radius: 1em;
+  	border: 2px solid #aaa;">
+    <br>
+    <input type="password" name="password" placeholder="パスワード" required
+    style="width: 30%;
+  	box-sizing: border-box;
+ 	margin: 1em 0;
+  	padding: .8em;
+  	border-radius: 1em;
+  	border: 2px solid #aaa;">
+    
+   <br>
+    <input type="submit" value="ログイン" 
+    style="
+    width: 10%; 
+    background-color: #87CEFA; 
+    color: white; 
+    box-sizing: border-box;
+  	margin: 1em 0;
+  	padding: .8em;
+  	border-radius: 1em;
+  	border: 2px solid #aaa;">
+  	</form>   
+   </div>
+
 
 <%@include file="../footer.html" %>

@@ -1,5 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../beforeloginheader.html" %>
+<%@include file="../header.html" %>
+<%@include file="../sidebar.html" %>
+
 
 <h2 class="studentmanage"
 	style="
@@ -7,7 +9,7 @@
 	background-color:#DCDCDC; 
 	padding: 5px; 
 	margin-bottom: 20px;
-	margin-left: 20%;">ログアウト</h2>
+	margin-left: 20%;">学生情報変更</h2>
 
 <h2 class="studentmanage"
 	style="
@@ -16,11 +18,10 @@
 	padding: 5px; 
 	margin-bottom: 10%;
 	margin-left: 20%;
-	text-align: center;">ログアウトしました。</h2>
+	text-align: center;">変更が完了しました。</h2>
 <div style="overflow: hidden;">
-<a href="../login/login.jsp" 
-style="padding-left: 300px;">ログイン</a>
+<a href="../studentmanage/studentlist.jsp" 
+style="padding-left: 300px;">学生一覧</a>
 </div>
-
 
 <%@include file="../footer.html" %>

@@ -27,6 +27,8 @@
 		<input type="text" name="no" placeholder="学生番号を入力してください。" required
 		style="width: 700px; height: 40px;">
 	<br>
+	<label style="color: red;float: left; padding-left: 200px">学生番号が重複しています。</label>
+	<br>
 	<label style="float: left; padding-left: 170px">氏名</label><br>
 		<input type="text" name="name" placeholder="氏名を入力してください。" required
 		style="width: 700px; height: 40px;">

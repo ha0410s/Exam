@@ -18,13 +18,12 @@ public class LoginAction extends Action {
 		String password=request.getParameter("password");
 
 		TeacherDAO dao=new TeacherDAO();
-		Teacher teacher=dao.search(id, password);
+		Teacher teacher=dao.login(id, password);
 		
 		if (teacher!=null) {
 			session.setAttribute("teacher", teacher);
-			return "../index/index.jsp";
+			return "../index/menu.jsp";
 		}
-		
-		return "login.jsp";
+		return "login_error.jsp";
 	}
 }  
