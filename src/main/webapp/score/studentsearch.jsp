@@ -63,7 +63,7 @@
 
 <body>
 
-    <h2 >成績参照</h2>
+    <h2 >成績一覧(学生)</h2>
     <div class="search-section">
         <form action="Score.action" method="post" >
             <p style="display: inline-block; margin-right: 20px;">科目情報</p>
@@ -132,17 +132,7 @@
                 <td>${score.point}点</td>
             </tr>
         </c:forEach>
-        <c:forEach var="studentsearch" items="${list}">
-            <tr>
-                <td>${studentsearch.subject_name}</td>
-                <td>${studentsearch.ent_year}年</td>
-                <td>${studentsearch.class_num}</td>
-                <td>${studentsearch.student_no}</td>
-                <td>${studentsearch.name}</td>
-                <td>${studentsearch.test_no }回目</td>
-                <td>${studentsearch.point}点</td>
-            </tr>
-        </c:forEach>
+        
     </table>
 </body>
 

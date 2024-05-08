@@ -21,7 +21,7 @@
 <body>
     <h1>:(</h1>
     <h2> Error</h2>
-    <p>tukuttetakedo, baguttayo...</p>
+    <p>データ更新画面を制作中</p>
     <p>gomennne..</p>
     <p>0% tukurukinaiyo </p>
     <a href="search.jsp">成績参照に戻る</a>
