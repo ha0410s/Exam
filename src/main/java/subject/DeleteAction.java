@@ -34,5 +34,4 @@ public class DeleteAction extends Action{
 			return "../subject/subjectdeleteerror.jsp";
 		}
 	}
-		
 }

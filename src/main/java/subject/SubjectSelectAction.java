@@ -25,5 +25,4 @@ public class SubjectSelectAction  extends Action{
 		return "../subject/update.jsp";
 	
 	}
-	
 }

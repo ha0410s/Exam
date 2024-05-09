@@ -25,5 +25,4 @@
 style="padding-left: 600px;">科目一覧</a>
 </div>
 
-
 <%@include file="../footer.html" %>

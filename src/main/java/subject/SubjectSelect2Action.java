@@ -25,5 +25,4 @@ public class SubjectSelect2Action  extends Action{
 		return "../subject/delete.jsp";
 	
 	}
-	
 }

@@ -34,5 +34,4 @@ public class InsertAction extends Action{
 			return "../subject/subjectinserterror.jsp";
 		}
 	}
-		
 }

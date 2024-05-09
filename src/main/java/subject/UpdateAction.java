@@ -31,5 +31,4 @@ public class UpdateAction extends Action{
 		return "../subject/subjectupdatedone.jsp";
 	
 	}
-	
 }
