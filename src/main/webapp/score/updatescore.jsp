@@ -1,7 +1,68 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../header.html" %>
-<%@include file="../index/menu.jsp" %>
+<%@include file="../sidebar.html"%>
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style>
+        body {
+            padding-left: 250px; /* サイドバーの幅を考慮して左側に余白を追加 */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border-bottom: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+       h1 {
+            width: 79%;
+            padding: 5px;
+            margin-bottom: 5%;
+            border-radius: 10px; 
+            top: 0; /* ヘッダーを画面上部に配置 */
+            left: 250px; /* サイドバーの幅分だけ左にずらす */
+        }
+        input[type="submit"] {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-section {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px; /* 枠組みに丸みを持たせる */
+        }
+
+        /* サイドバーのスタイル */
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding-top: 20px;
+        }
+        
+
+    </style>
+</head>
+
+
+
 <h1>成績登録</h1>
 <p>変更したい成績を検索してください</p>
 <form action="UpdateScore.action" method="post">
@@ -55,5 +116,7 @@
     </tr>
   </c:forEach>
 </table>
+
+<%@include file="../footer.html"%>
 
 </form>

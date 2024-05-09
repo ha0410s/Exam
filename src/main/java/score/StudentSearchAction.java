@@ -26,7 +26,7 @@ public class StudentSearchAction extends Action {
             // JSP に渡すために検索結果をリクエストにセット
             request.setAttribute("list", list);
             // 結果を表示する JSP へフォワード
-            return "../score/search.jsp";
+            return "../score/studentsearch.jsp";
         }
     }
 }

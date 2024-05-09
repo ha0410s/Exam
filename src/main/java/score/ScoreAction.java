@@ -15,26 +15,28 @@ public class ScoreAction extends Action {
         String subject_name = request.getParameter("subject");
         String ent_year = request.getParameter("ent_year");
         
+        // 全ての項目が入力されているかチェック
         if (class_num == null || class_num.isEmpty() || subject_name == null || subject_name.isEmpty() || ent_year ==null || ent_year.isEmpty()) {
+            // エラーメッセージをリクエスト属性に設定
             request.setAttribute("errorMessage", "全ての項目を入力してください");
-            // エラーメッセージを表示するためにエラーページにフォワード
-            return "../score/search.jsp";
+            // エラーページにフォワード
+            return "../score/search.jsp"; // エラーメッセージを表示するJSPのパスに修正
         } else {
             // データベースから検索結果を取得
             TestListScoreDAO dao = new TestListScoreDAO();
             List<TestListScore> list = dao.search(class_num, subject_name, ent_year);
             
-            // Check if the list is empty
+            // 検索結果が空でないかチェック
             if (list.isEmpty()) {
-                // If the list is empty, set the error message
-                request.setAttribute("errorMessage2", "学生情報が存在しませんでした");
-                // Forward to the appropriate JSP page
-                return "../score/search.jsp";
+                // 学生情報が存在しない場合のエラーメッセージをリクエスト属性に設定
+                request.setAttribute("errorMessage", "該当する学生情報が見つかりませんでした");
+                // エラーページにフォワード
+                return "../score/search.jsp"; // エラーメッセージを表示するJSPのパスに修正
             } else {
-                // JSPに渡すために検索結果をリクエストにセット
+                // 検索結果をリクエスト属性に設定
                 request.setAttribute("list", list);
-                // 結果を表示するJSPへフォワード
-                return "../score/search.jsp";
+                // 科目情報の検索結果を表示するJSPにフォワード
+                return "../score/subjectsearch.jsp"; // 科目情報の検索結果を表示するJSPのパスに修正
             }
         }
     }
