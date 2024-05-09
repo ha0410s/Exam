@@ -1,30 +1,38 @@
-<%@page contentType="text/html; charset=UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@include file="../sidebar.html" %>
 
-<html>
-    <head>
-        <title>科目データを削除する</title>
-    </head>
-    <body>
-        <div style="text-align:center">
-            <h2 style="text-align:center">科目削除画面</h2>
-            <hr style="height:3; background-color:#0000ff" />
-            <br>
-            <form action="../subject/delete" method="post">
-                削除する科目のコードを入力してください。
-                <table style="margin:0 auto">
-                <br>
-                    <tr>
-                        <td style="width:90">科目コード</td>
-                        <td ><input type=text size="30" name="cd"></input></td>
-                        <td colspan=2 style="text-align:right">
-                            <input type="submit" value="削除">
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <br>
-        </div>
-    </body>
- </html>
+<h2 class="subject"
+	style="
+	width:79%;
+	background-color:#DCDCDC; 
+	padding: 5px; 
+	margin-bottom: 10%;
+	margin-left: 20%;">科目情報削除</h2>
+
+<div style="text-align: center; overflow: hidden;">
+<form action="../subject/Delete.action" method ="post">	
+		<div style="display: flex;">
+		
+ 		<label style="float: left; padding-left: 50px; padding-bottom: 40px;">科目コード</label>
+ 		<br>
+ 			 <input value="${subject.getCD()}" readonly 
+ 			 style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
+ 			 <input value="${subject.getName()}" readonly 
+ 			 style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
+ 		</div>	 
+		<div style="display: flex; padding: 60px 50px;">
+			<input type="submit" value="削除" 
+			style="	color: white;
+					margin-top: 50px;
+					cursor: pointer;
+					height: 55px;
+					width: 97px; 
+					background-color: #FF0000;
+					border-radius: 1rem;
+					border-style: none;">
+		</div>
+</form>
+</div>
+
 <%@include file="../footer.html" %>

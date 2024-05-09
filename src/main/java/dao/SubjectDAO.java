@@ -51,19 +51,22 @@ import bean.Subject;
 		}
 		
 		//データベースのデータを更新するメソッド
-		public int update(Subject subject) throws Exception {
-			Connection con=getConnection();
-			
+		public int update(String cd, String name) 
+				throws Exception { // searchメソッドを定義
+
+			Connection con=getConnection(); // DBに接続(DAOのgetConnectionメソッドを実行)
+
+			// select文を実行
 			PreparedStatement st=con.prepareStatement(
-					"update subject set school_cd=?, name=? where cd=?");
-			st.setString(1, subject.getSchool_cd());
-			st.setString(2, subject.getName());
-			st.setString(3, subject.getCD());
+					"UPDATE subject SET name = ? WHERE cd = ?");
+			st.setString(1, name);
+			st.setString(2, cd);
 			int line=st.executeUpdate();
 
 			st.close();
 			con.close();
 			return line;
+
 		}		
 		
 		public int delete(Subject subject) throws Exception {
@@ -78,4 +81,33 @@ import bean.Subject;
 			con.close();
 			return line;
 		}
+		
+		public Subject searchsubject(String cd) 
+				throws Exception { // searchメソッドを定義
+			
+
+			Connection con=getConnection(); // DBに接続(DAOのgetConnectionメソッドを実行)
+
+			// select文を実行
+			PreparedStatement st=con.prepareStatement(
+				"select * from subject where cd = ?");
+			st.setString(1, cd);
+			ResultSet rs=st.executeQuery();
+
+			
+			Subject p=null;
+			// データを順に取得
+			while (rs.next()) {
+				p=new Subject();
+				p.setSchool_cd(rs.getString("school_cd"));
+				p.setCD(rs.getString("cd"));
+				p.setName(rs.getString("name"));
+			}
+			st.close();
+			con.close(); // DB接続を閉じる
+
+			return p; 
+			
+		}
+		
 	}
