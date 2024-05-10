@@ -19,7 +19,7 @@
 	margin-left: 20%;
 	text-align: center;">削除が完了しました。</h2>
 <div style="overflow: hidden;">
-<a href="../subject/subject.jsp" 
+<a href="../subject/Subject.action" 
 style="padding-left: 300px;">科目一覧</a>
 </div>
 

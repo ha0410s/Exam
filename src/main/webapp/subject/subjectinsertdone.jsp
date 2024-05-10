@@ -21,7 +21,7 @@
 <div style="overflow: hidden;">
 <a href="../subject/insert.jsp" style="padding-left: 300px;">戻る</a>
 
-<a href="../subject/subject.jsp" 
+<a href="../subject/Subject.action" 
 style="padding-left: 600px;">科目一覧</a>
 </div>
 

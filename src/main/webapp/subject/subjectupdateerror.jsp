@@ -9,25 +9,25 @@
 	background-color:#DCDCDC; 
 	padding: 5px; 
 	margin-bottom: 10%;
-	margin-left: 20%;">科目情報登録</h2>
-
+	margin-left: 20%;">科目情報更新</h2>
+	
 <div style="text-align: center; overflow: hidden;">
-<form action="../subject/Insert.action" method="post">
-	<label style="float: left; padding-left: 170px">学校コード</label><br>
-		<input type="text" name="school_cd" placeholder="学校コードを入力してください。" required
-		style="width: 700px; height: 40px;">
+<form action="../subject/Update.action" method ="post">	
+	<div style="display: flex;">
+		
+ 	<label style="float: left; padding-left: 50px; padding-bottom: 40px;">科目コード</label>
+ 	<br>
+ 		<input value="${subject.CD}" name="cd" readonly 
+ 		style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
+ 	</div>	
 	<br>
-	<br>
-	<label style="float: left; padding-left: 170px">科目コード</label><br>
-		<input type="text" name="cd" placeholder="科目コードを入力してください。" required
-		style="width: 700px; height: 40px;">
-	<br>
+	<label style="color: red;float: left; padding-left: 200px">科目が存在していません。</label>
 	<br>
 	<label style="float: left; padding-left: 170px">科目名</label><br>
 		<input type="text" name="name" placeholder="科目名を入力してください。" required
 		style="width: 700px; height: 40px;">
 	<br>
-	<input type="submit" value="登録" 
+	<input type="submit" value="更新" 
 			style="	color: white;
 					margin-top: 50px;
 					cursor: pointer;
@@ -39,4 +39,6 @@
 </form>
 </div>
 
+
 <%@include file="../footer.html" %>
+

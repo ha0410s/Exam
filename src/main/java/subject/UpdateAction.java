@@ -15,16 +15,16 @@ public class UpdateAction extends Action{
 		HttpSession session = req.getSession();
 
 		
-		String cd=req.getParameter("cd");
-		String name=req.getParameter("name");
+		String update_cd=req.getParameter("cd");
+		String update_name=req.getParameter("name");
 		
 		Subject sj = new Subject();
-		sj.setCD(cd);
-		sj.setName(name);
+		sj.setCD(update_cd);
+		sj.setName(update_name);
 		
 		
 		SubjectDAO dao=new SubjectDAO();
-		int line=dao.update(cd, name);
+		int line=dao.update(update_cd, update_name);
 		session.setAttribute("line", line);
 		
 		

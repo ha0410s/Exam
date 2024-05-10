@@ -13,7 +13,7 @@
 
 <div style="text-align: center; overflow: hidden;">
 <form action="../subject/Insert.action" method="post">
-	<label style="float: left; padding-left: 170px">学校コード</label><br>
+    <label style="float: left; padding-left: 170px">学校コード</label><br>
 		<input type="text" name="school_cd" placeholder="学校コードを入力してください。" required
 		style="width: 700px; height: 40px;">
 	<br>
@@ -22,6 +22,7 @@
 		<input type="text" name="cd" placeholder="科目コードを入力してください。" required
 		style="width: 700px; height: 40px;">
 	<br>
+	<label style="color: red;float: left; padding-left: 200px">科目コードが重複しています。</label>
 	<br>
 	<label style="float: left; padding-left: 170px">科目名</label><br>
 		<input type="text" name="name" placeholder="科目名を入力してください。" required
@@ -38,5 +39,6 @@
 					border-style: none;">
 </form>
 </div>
+
 
 <%@include file="../footer.html" %>

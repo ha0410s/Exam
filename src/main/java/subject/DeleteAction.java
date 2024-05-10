@@ -16,14 +16,14 @@ public class DeleteAction extends Action{
 		try {
 		HttpSession session = req.getSession();
 		
-		String school_cd =req.getParameter("school_cd");
-		String cd=req.getParameter("cd");
-		String name=req.getParameter("name");
+		String delete_school_cd =req.getParameter("school_cd");
+		String delete_cd=req.getParameter("cd");
+		String delete_name=req.getParameter("name");
 		
 		Subject sj = new Subject();
-		sj.setSchool_cd(school_cd);
-		sj.setCD(cd);
-		sj.setName(name);
+		sj.setSchool_cd(delete_school_cd);
+		sj.setCD(delete_cd);
+		sj.setName(delete_name);
 		
 		SubjectDAO dao=new SubjectDAO();
 		int line=dao.delete(sj);

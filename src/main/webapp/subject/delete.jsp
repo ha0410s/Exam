@@ -13,12 +13,9 @@
 <div style="text-align: center; overflow: hidden;">
 <form action="../subject/Delete.action" method ="post">	
 		<div style="display: flex;">
-		
- 		<label style="float: left; padding-left: 50px; padding-bottom: 40px;">科目コード</label>
- 		<br>
- 			 <input value="${subject.getCD()}" readonly 
+ 			 <input value="${subject.getCD()}" name ="cd" readonly 
  			 style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
- 			 <input value="${subject.getName()}" readonly 
+ 			 <input value="${subject.getName()}" name="name" readonly 
  			 style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
  		</div>	 
 		<div style="display: flex; padding: 60px 50px;">

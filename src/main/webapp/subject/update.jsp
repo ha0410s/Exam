@@ -16,7 +16,7 @@
 		
  		<label style="float: left; padding-left: 50px; padding-bottom: 40px;">科目コード</label>
  		<br>
- 			 <input value="${subject.getCD()}" readonly 
+ 			 <input value="${subject.CD}" name="cd" readonly 
  			 style="width: 700px; height: 40px; margin: 40px 50px; border: none;">
  		</div>	 
  		
