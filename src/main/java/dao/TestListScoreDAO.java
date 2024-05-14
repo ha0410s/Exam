@@ -30,8 +30,8 @@ public class TestListScoreDAO extends DAO {
 	        score.setName(rs.getString("name"));
 	        score.setClass_num(rs.getString("class_num"));
 	        score.setPoint(rs.getInt("point"));
-	        score.setSubject_name(rs.getString("subject.name"));  
-	        score.setTest_no(rs.getInt("test.no"));
+	        score.setSubject_name(rs.getString("subject_name"));  
+	        score.setTest_no(rs.getInt("test_no"));
 	        scoreList.add(score);
 	    }
 
@@ -56,8 +56,8 @@ public class TestListScoreDAO extends DAO {
 	 	        score.setName(rs.getString("name"));
 	 	        score.setClass_num(rs.getString("class_num"));
 	 	        score.setPoint(rs.getInt("point"));
-	 	        score.setSubject_name(rs.getString("subject.name"));  
-	 	        score.setTest_no(rs.getInt("test.no"));
+	 	        score.setSubject_name(rs.getString("subject_name"));  
+	 	        score.setTest_no(rs.getInt("test_no"));
 	 	        scoreList.add(score);
 	 	    }
 

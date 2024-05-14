@@ -21,7 +21,7 @@
 <div style="overflow: hidden;">
 <a href="../studentmanage/insert.jsp" style="padding-left: 300px;">戻る</a>
 
-<a href="../studentmanage/studentlist.jsp" 
+<a href="../studentlist/StudentAllList.action" 
 style="padding-left: 600px;">学生一覧</a>
 </div>
 

@@ -14,7 +14,10 @@ public class StudentCreateAction extends Action{
 	public String execute(HttpServletRequest req, HttpServletResponse res
 			)throws Exception{
 		try {
+			
 		HttpSession session = req.getSession();
+		
+	
 		
 		int create_ent_year=Integer.parseInt(req.getParameter("ent_year"));
 		String create_no=req.getParameter("no");
@@ -24,12 +27,14 @@ public class StudentCreateAction extends Action{
 		boolean create_is_attend = true;
 		
 		if(create_class_num.equals("101")) {
-			create_school_cd.equals("tky");
+			create_school_cd = "tky";
 		}
 		if(create_ent_year < 2022) {
 			create_is_attend = false;
 		}
-		
+		if(create_ent_year == 0) {
+			return "../studentmanage/studentcreatenoent_year.jsp";
+		}
 		
 		Student st = new Student();
 		st.setNo(create_no);
@@ -44,6 +49,7 @@ public class StudentCreateAction extends Action{
 		session.setAttribute("line", line);
 		
 		 return "../studentmanage/studentcreatedone.jsp";
+	
 		}catch(JdbcSQLException e){
 			return "../studentmanage/studentcreateerror.jsp";
 		}

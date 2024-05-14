@@ -10,7 +10,7 @@ import bean.Student;
 
 
 public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスのメソッドが使えるようになる)
-	public List<Student> searchall() 
+	public List<Student> searchall(String teacher_school_cd) 
 			throws Exception { // searchメソッドを定義
 		List<Student> list=new ArrayList<>(); // Product型の配列を作成
 
@@ -18,8 +18,10 @@ public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスの�
 
 		// select文を実行
 		PreparedStatement st=con.prepareStatement(
-			"select * from student");
+			"select * from student where school_cd = ?");
+		st.setString(1, teacher_school_cd);
 		ResultSet rs=st.executeQuery();
+		
 
 		// データを順に取得
 		while (rs.next()) {
@@ -38,7 +40,7 @@ public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスの�
 		return list; 
 		
 	}
-		public List<Student> search1(int select_ent_year, String select_class_num, Boolean select_is_attend) 
+		public List<Student> search1(int select_ent_year, String select_class_num, Boolean select_is_attend, String teacher_school_cd) 
 				throws Exception { // searchメソッドを定義
 			List<Student> list=new ArrayList<>(); // Product型の配列を作成
 
@@ -46,10 +48,11 @@ public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスの�
 
 			// select文を実行
 			PreparedStatement st=con.prepareStatement(
-				"select * from student where ent_year = ? and class_num = ? and is_attend = ?");
+				"select * from student where ent_year = ? and class_num = ? and is_attend = ? and school_cd = ?");
 			st.setInt(1, select_ent_year);
 			st.setString(2, select_class_num);
 			st.setBoolean(3, select_is_attend);
+			st.setString(4, teacher_school_cd);
 			ResultSet rs=st.executeQuery();
 
 			// データを順に取得
@@ -71,7 +74,8 @@ public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスの�
 
 
 }
-		public List<Student> search2(String select_class_num, Boolean select_is_attend) 
+		
+		public List<Student> search2(int select_ent_year, Boolean select_is_attend, String teacher_school_cd) 
 				throws Exception { // searchメソッドを定義
 			List<Student> list=new ArrayList<>(); // Product型の配列を作成
 
@@ -79,41 +83,10 @@ public class StudentDAO extends DAO { // DAOクラスを継承(DAOクラスの�
 
 			// select文を実行
 			PreparedStatement st=con.prepareStatement(
-				"select * from student where class_num = ? and is_attend = ?");
-			st.setString(1, select_class_num);
-			st.setBoolean(2, select_is_attend);
-			ResultSet rs=st.executeQuery();
-
-			// データを順に取得
-			while (rs.next()) {
-				Student p=new Student();
-				p.setNo(rs.getString("no"));
-				p.setName(rs.getString("name"));
-				p.setEnt_year(rs.getInt("ent_year"));
-				p.setClass_num(rs.getString("class_num"));
-				p.setIs_attend(rs.getBoolean("is_attend"));
-				p.setSchool_cd(rs.getString("school_cd"));
-				list.add(p); // データを一件取得するごとにlistに追記する		
-			}
-
-			st.close();
-			con.close(); // DB接続を閉じる
-
-			return list; // listの値を返却する
-
-
-}
-		public List<Student> search3(int select_ent_year, Boolean select_is_attend) 
-				throws Exception { // searchメソッドを定義
-			List<Student> list=new ArrayList<>(); // Product型の配列を作成
-
-			Connection con=getConnection(); // DBに接続(DAOのgetConnectionメソッドを実行)
-
-			// select文を実行
-			PreparedStatement st=con.prepareStatement(
-				"select * from student where ent_year = ? and is_attend = ?");
+				"select * from student where ent_year = ? and is_attend = ? and school_cd = ? ");
 			st.setInt(1, select_ent_year);
 			st.setBoolean(2, select_is_attend);
+			st.setString(3, teacher_school_cd);
 			ResultSet rs=st.executeQuery();
 
 			// データを順に取得

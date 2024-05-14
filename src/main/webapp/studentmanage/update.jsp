@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../header.html" %>
 <%@include file="../sidebar.html" %>
 
@@ -37,9 +38,11 @@
 		<br>
 			<select class="form-select"id="select_class_num" name="f2" style="width: 700px; height: 40px; margin: 40px 35px;">
 				<option value="0">------</option>
-				<option value="101">101</option>			
-				<option value="131">131</option>
-				<option value="201">201</option>
+    			<c:forEach var="classNumArray" items="${classNums}">
+        			<c:forEach var="classNum" items="${classNumArray}">									
+            			<option value="${classNum}">${classNum}</option>
+        			</c:forEach>
+    			</c:forEach>
 			</select> 
 		</div>
 		<div>
@@ -59,6 +62,7 @@
 					border-style: none;">
 		</div>
 </form>
+	<a href="../studentlist/StudentAllList.action" style="display: flex; padding: 60px 50px;">戻る</a>
 </div>
 
 <%@include file="../footer.html" %>

@@ -24,7 +24,7 @@
 			height: 10rem; 
 			background-color: #dbb;
 			border-radius: 1em;">
-		<a href="../studentmanage/studentlist.jsp" style="line-height: 150px;">学生管理</a>
+		<a href="../studentlist/StudentAllList.action" style="line-height: 150px;">学生管理</a>
 	</div>
 	<div style="
 			width: 20%;
