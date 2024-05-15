@@ -121,28 +121,7 @@
             <th>回数</th>
             <th>点数</th>
         </tr>
-        <c:forEach var="score" items="${list}">
-            <tr>
-                <td>${score.subject_name}</td>
-                <td>${score.ent_year}年</td>
-                <td>${score.class_num}</td>
-                <td>${score.student_no}</td>
-                <td>${score.name}</td>
-                <td>${score.test_no }回目</td>
-                <td>${score.point}点</td>
-            </tr>
-        </c:forEach>
-        <c:forEach var="studentsearch" items="${list}">
-            <tr>
-                <td>${studentsearch.subject_name}</td>
-                <td>${studentsearch.ent_year}年</td>
-                <td>${studentsearch.class_num}</td>
-                <td>${studentsearch.student_no}</td>
-                <td>${studentsearch.name}</td>
-                <td>${studentsearch.test_no }回目</td>
-                <td>${studentsearch.point}点</td>
-            </tr>
-        </c:forEach>
+       
     </table>
 </body>
 

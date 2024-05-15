@@ -1,71 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.io.BufferedReader, java.io.FileReader, java.io.BufferedWriter, java.io.FileWriter, java.io.IOException" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Emoji Rotation</title>
+    <title>error.counter</title>
     <style>
-        /* Rainbow Styles */
         body {
-            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative; /* 似顔絵の上に重ねるために position: relative; を追加 */
+            
+            background-color: #4169e1;
+            color: white;
         }
-
-        .rainbow-container {
-            width: 300px;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
+       
         }
-
-        .emoji {
-            font-size: 100px;
-            animation: rotateEmoji 5s linear infinite, changeColor 5s linear infinite;
-        }
-
-        @keyframes rotateEmoji {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes changeColor {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
         h1 {
-            position: absolute; /* 似顔絵の上に重ねるために position: absolute; を追加 */
-            top: 50%; /* 上下中央に配置するために top: 50%; を追加 */
-            left: 50%; /* 左右中央に配置するために left: 50%; を追加 */
-            transform: translate(-50%, -50%); /* 中央配置の微調整 */
-            font-size: 24px; /* フォントサイズを調整 */
-            color: white; /* 文字色を白に設定 */
-            mix-blend-mode: difference; /* 虹色の背景に対してコントラストの高い色になるように設定 */
-        }
+            font-size: 80px;}
+            
+        
     </style>
 </head>
 <body>
-    <div class="rainbow-container">
-        <div class="emoji">😊</div>
-        <h1>エラーページです。ブラウザを閉じてください。</h1> <!-- h1 タグを追加 -->
+    <div class="container">
+        <%
+            // カウンターのファイルパスを指定
+            String filePath = "counter.txt";
+            
+            // カウンターの値を読み込む
+            int count = 0;
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(filePath));
+                count = Integer.parseInt(reader.readLine());
+                reader.close();
+            } catch (IOException e) {
+                // ファイルが存在しない場合は新しく作成する
+                count = 0;
+            }
+            
+            // カウンターの値を更新する
+            count++;
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+                writer.write(String.valueOf(count));
+                writer.close();
+            } catch (IOException e) {
+                // カウンターの値を保存できない場合はエラーメッセージを表示
+                out.println("カウンターの更新に失敗しました。");
+            }
+        %>
+
+        <h1>:(</h1>
+    <h2> Error</h2>
+    <p>tukuttetakedo, baguttayo...</p>
+        <p>	<%= count %> % tukurukinaiyo</p>
     </div>
 </body>
 </html>
