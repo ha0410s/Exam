@@ -13,7 +13,7 @@ public class UpdateSearchAction extends Action {
         // フォームから送信されたデータを取得
         String ent_year = request.getParameter("ent_year");
         String class_num = request.getParameter("class_num");
-        String subject_name = request.getParameter("subject");
+        String subject_name = request.getParameter("subject_name");
         String test_no = request.getParameter("test_no");
         
         if (class_num == null || class_num.isEmpty() || subject_name == null || subject_name.isEmpty() || ent_year == null || ent_year.isEmpty() || test_no == null || test_no.isEmpty()) {
