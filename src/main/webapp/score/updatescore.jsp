@@ -136,7 +136,7 @@
             </tr>
             <c:forEach var="score" items="${list}">
                 <tr>
-                    <td>${score.subject_name}</td>
+                    <td>${score.ent_year}</td>
                     <td>${score.class_num}</td>
                     <td>${score.student_no}</td>
                     <td>${score.name}</td>
