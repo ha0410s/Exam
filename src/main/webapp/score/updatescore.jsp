@@ -128,7 +128,7 @@
     <form action="updatesuccess.jsp" method="post">
         <table style="border-collapse:separate;border-spacing:10px">
             <tr>
-                <th>入学年</th>
+                <th>入学年度</th>
                 <th>クラス</th>
                 <th>学生番号</th>
                 <th>氏名</th>
