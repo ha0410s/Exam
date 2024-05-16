@@ -51,10 +51,9 @@ public class TestListScoreDAO extends DAO {
 	    	 
 	    	 while (rs.next()) {
 	 	        TestListScore score = new TestListScore();
-	 	        score.setEnt_year(rs.getInt("ent_year"));
 	 	        score.setStudent_no(rs.getString("student_no"));
 	 	        score.setName(rs.getString("name"));
-	 	        score.setClass_num(rs.getString("class_num"));
+	 	        score.setSubject_cd(rs.getString("subject_cd"));
 	 	        score.setPoint(rs.getInt("point"));
 	 	        score.setSubject_name(rs.getString("subject.name"));  
 	 	        score.setTest_no(rs.getInt("test.no"));

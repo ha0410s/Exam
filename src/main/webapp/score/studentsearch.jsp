@@ -113,10 +113,8 @@
 
     <table style="border-collapse: separate; border-spacing: 10px">
         <tr>
-            <th>教科</th>
-            <th>入学年</th>
-            <th>クラス</th>
-            <th>学生番号</th>
+            <th>教科名</th>
+            <th>科目コード</th>
             <th>名前</th>
             <th>回数</th>
             <th>点数</th>
@@ -124,9 +122,7 @@
         <c:forEach var="score" items="${list}">
             <tr>
                 <td>${score.subject_name}</td>
-                <td>${score.ent_year}年</td>
-                <td>${score.class_num}</td>
-                <td>${score.student_no}</td>
+                <td>${score.subject_cd}</td>
                 <td>${score.name}</td>
                 <td>${score.test_no }回目</td>
                 <td>${score.point}点</td>
