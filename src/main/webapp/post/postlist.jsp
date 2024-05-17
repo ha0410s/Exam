@@ -30,15 +30,14 @@
 <div class="table-container">
     <section class="me-4" style="width: 100%;">
         <div style="margin-left:40px;margin-bottom:30px;">
-			<div class="my-2 text-end px-4" style="margin-bottom: 1rem; margin-left: 500px;">
-				<a href="../post/postcreate.jsp">新規登録</a>
+			<div class="my-2 text-end px-4" style="margin-bottom: 1rem; margin-left: 750px;">
+				<a href="../post/postcreate.jsp">投稿する</a>
 			</div>
 			
 		</div>	
 	
 		<c:choose>
 			<c:when test="${empty list}">
-				検索結果：0件<br>
 				投稿が存在しませんでした。
 			</c:when>
         <c:otherwise>

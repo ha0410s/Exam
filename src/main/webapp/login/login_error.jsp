@@ -13,7 +13,9 @@ function togglePasswordVisibility() {
 </script>
 
 <div style="text-align: center;">
-	<label>ログインに失敗しました。IDまたはパスワードが正しくありません。</label>
+	<ul id="error-messages" style="list-style:none;">
+        <li>ログインに失敗しました。IDまたはパスワードが正しくありません。</li>
+    </ul>
     <form action="Login.action" method="post">
     <title>
         ログイン画面
@@ -53,4 +55,6 @@ function togglePasswordVisibility() {
 </div>
 
 <%@include file="../footer.html" %>
+
+
    

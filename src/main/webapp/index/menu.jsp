@@ -42,7 +42,7 @@
 		background-color: 	#B0E0E6;
 		border-radius: 1em;
 		text-align: center;">
-		<a href="" style="line-height: 150px;">科目管理</a>
+		<a href="../subject/Subject.action" style="line-height: 150px;">科目管理</a>
 	</div>
 </div>
 

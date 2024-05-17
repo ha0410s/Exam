@@ -74,7 +74,7 @@
 				<th style="padding-left: 3rem;">入学年度</th>
 				<th style="padding-left: 3rem;">学生番号</th>
 				<th style="padding-left: 2rem;">氏名</th>
-				<th style="padding-left: 3em;">クラス</th>
+				<th style="padding-left: 2em;">クラス</th>
 				<th class="text-center"  style="padding-left: 3rem;">在学中</th>
 			
 			

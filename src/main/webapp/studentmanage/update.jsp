@@ -31,12 +31,14 @@
  		<div style="display: flex;">
 		<label style="float: left; padding-left: 50px; padding-bottom: 50px;">氏名</label>
 		<br>
-			<input type="text" name="f1" required style="width: 700px; height: 40px; margin: 40px 80px; font-size:20px;">
+			<input type="text" name="f1" required 
+			style="width: 700px; height: 40px; margin: 40px 80px; font-size:20px;">
 		</div>
 		<div style="display: flex;">
 		<label style="float: left; padding-left: 50px; padding-bottom: 50px;">クラス番号</label>
 		<br>
-			<select class="form-select"id="select_class_num" name="f2" style="width: 700px; height: 40px; margin: 40px 35px;">
+			<select class="form-select"id="select_class_num" name="f2" 
+			style="width: 700px; height: 40px; margin: 40px 35px;">
 				<option value="0">------</option>
     			<c:forEach var="classNumArray" items="${classNums}">
         			<c:forEach var="classNum" items="${classNumArray}">									
@@ -47,7 +49,8 @@
 		</div>
 		<div>
 		<label style="float: left; padding-left: 50px; padding-bottom: 50px;">在学中</label>
-			<input class="form-check-input" type="checkbox"id="select_is_attend" name="f3" value="true" style=" margin: 40px 65px; float: left; width: 15px; height: 15px;">
+			<input class="form-check-input" type="checkbox"id="select_is_attend" name="f3" value="true" 
+			style=" margin: 40px 65px; float: left; width: 15px; height: 15px;">
 		<br>
 		</div>
 		<div style="display: flex; padding: 60px 50px;">

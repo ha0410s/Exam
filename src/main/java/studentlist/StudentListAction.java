@@ -39,8 +39,14 @@ public class StudentListAction extends Action{
 			return "../studentmanage/studentlist.jsp";
 			
 		}
-		else if(select_ent_year == 0){
-			return "../studentmanage/studentlist.jsp";
+		else if(select_ent_year == 0 && select_is_attend1 == false){
+			return "../studentmanage/studentlistnoent_year.jsp";
+		}
+		else if(select_ent_year == 0 && select_is_attend1 == true && select_class_num.equals("0")) {
+			StudentDAO dao= new StudentDAO();
+			List<Student>list=dao.search3(select_is_attend1, teacher_school_cd);
+			
+			session.setAttribute("list", list);
 		}
 		else if(select_class_num.equals("0")) {
 			StudentDAO dao=new StudentDAO();

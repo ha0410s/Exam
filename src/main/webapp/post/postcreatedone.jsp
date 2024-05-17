@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@include file="../sidebar.html" %>
 
 
 <h2 class="studentmanage"
@@ -21,8 +22,7 @@
 <div style="overflow: hidden;">
 <a href="../post/postcreate.jsp" style="padding-left: 300px;">戻る</a>
 
-<a href="../post/PostList.action" 
-style="padding-left: 600px;">掲示板</a>
+<a href="../post/PostList.action" style="padding-left: 600px;">掲示板</a>
 </div>
 
 

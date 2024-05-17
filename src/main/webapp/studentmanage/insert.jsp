@@ -51,7 +51,7 @@
 		</select>
 		
 	<br>
-	<input type="submit" value="登録して終了" 
+	<input type="submit" value="登録して終了"
 			style="	color: white;
 					margin-top: 50px;
 					cursor: pointer;
@@ -60,6 +60,7 @@
 					background-color: #87CEEB;
 					border-radius: 1rem;
 					border-style: none;">
+	<a href="../studentlist/StudentAllList.action" style="display: flex; padding: 60px 250px;">戻る</a>
 </form>
 </div>
 

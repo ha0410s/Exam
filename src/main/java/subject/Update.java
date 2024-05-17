@@ -30,7 +30,7 @@ public class Update extends HttpServlet {
 			k.setName(name);
 			k.setCD(cd);
 			SubjectDAO dao=new SubjectDAO();
-			int line=dao.update(k);
+			int line=dao.update(name, cd);
 
 			if (line>0) {
 				response.sendRedirect("../subject/subject.jsp");

@@ -13,6 +13,7 @@ function togglePasswordVisibility() {
 </script>
 
 <div style="text-align: center;">
+	<h3 style="text-align: center;">ログイン</h3>
     <form action="Login.action" method="post">
     <title>
         ログイン画面
