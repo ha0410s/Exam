@@ -1,5 +1,7 @@
 package subject;
 
+import org.h2.jdbc.JdbcSQLException;
+
 import bean.Subject;
 import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,6 +14,7 @@ public class UpdateAction extends Action{
 	public String execute(
 		HttpServletRequest req, HttpServletResponse res)throws Exception{
 		
+		try {
 		HttpSession session = req.getSession();
 
 		
@@ -29,6 +32,9 @@ public class UpdateAction extends Action{
 		
 		
 		return "../subject/subjectupdatedone.jsp";
+	    }catch(JdbcSQLException e){
+		    return "../subject/subjectinserterror.jsp";
+	    }
 	
 	}
 }

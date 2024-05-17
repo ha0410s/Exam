@@ -20,7 +20,7 @@
 	text-align: center;">変更が完了しました。</h2>
 <div style="overflow: hidden;">
 <a href="../subject/Subject.action" 
-style="padding-left: 300px;">科目一覧</a>
+style="padding-left: 75px;">科目一覧</a>
 </div>
 
 <%@include file="../footer.html" %>

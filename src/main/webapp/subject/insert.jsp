@@ -39,4 +39,8 @@
 </form>
 </div>
 
+<div style="width:50%; margin-left:25%;">
+<a href="../subject/subject.jsp" method="post">戻る</a>
+</div>
+
 <%@include file="../footer.html" %>

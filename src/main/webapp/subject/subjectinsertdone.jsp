@@ -1,6 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
-
+<%@include file="../sidebar.html" %>
 
 <h2 class="subject"
 	style="
@@ -19,10 +19,10 @@
 	margin-left: 20%;
 	text-align: center;">登録が完了しました。</h2>
 <div style="overflow: hidden;">
-<a href="../subject/insert.jsp" style="padding-left: 300px;">戻る</a>
+<a href="../subject/insert.jsp" style="padding-left: 75px;">戻る</a>
 
 <a href="../subject/Subject.action" 
-style="padding-left: 600px;">科目一覧</a>
+style="padding-left: 175px;">科目一覧</a>
 </div>
 
 <%@include file="../footer.html" %>
